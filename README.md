@@ -1,2 +1,2 @@
 # SpORT
-SpORT: Sparse operator representation toolset
+SPORT: Structured particular operator representation toolset
