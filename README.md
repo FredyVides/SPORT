@@ -1,2 +1,2 @@
 # SPORT
-SPORT: Structured particular operator representation toolset
+SPORT: Structure preserving operator representation toolset
