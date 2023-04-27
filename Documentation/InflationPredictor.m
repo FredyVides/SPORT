@@ -133,12 +133,10 @@ YFp = YF*q;
 figure(1),subplot(212),plot((1:(Ntrain+T))+1979,Outputs(1:(Ntrain+T)),'b',t, [Outputs(Ntrain);YFp], 'r.-', t, [Outputs(Ntrain);YFp]+[0;scale*SE], 'r--', t, [Outputs(Ntrain);YFp]-[0;scale*SE], 'r--')
 xlim([1980 1980+length(Outputs)-1]),ylim([mv Mv]), grid on,xlabel('t (years)'),ylabel('Inflation rate (%)'),legend('Reference data','Predictions')
 
-figure(2),G = CGraphGen(Outputs(1:Ntrain,:),Inputs(1:Ntrain,:),0.15);axis square,axis tight
+figure(2),subplot(121),G = CGraphGen(Outputs(1:Ntrain,:),Inputs(1:Ntrain,:),0.2);axis square,axis tight
 
-figure(3),subplot(221),G = CGraphGen(Outputs(1:Ntrain,:),Inputs(1:Ntrain,:),0.2);axis square,axis tight
+figure(2),subplot(122),G = CGraphGen(Yt(:,1),Yt(:,2:end),0.22);axis square,axis tight
 
-figure(3),subplot(222),G = CGraphGen(Yt(:,1),Yt(:,2:end),0.22);axis square,axis tight
+figure(3),subplot(121),spy(Cw),axis tight,grid on
 
-figure(3),subplot(223),spy(Cw),axis tight,grid on
-
-figure(3),subplot(224),plot(exp(2*pi*i*(0:1/100:1))),hold on,plot(eig(full(Cw)),'r.'),hold off,axis equal,axis tight,grid on
+figure(3),subplot(122),plot(exp(2*pi*i*(0:1/100:1))),hold on,plot(eig(full(Cw)),'r.'),hold off,axis equal,axis tight,grid on
